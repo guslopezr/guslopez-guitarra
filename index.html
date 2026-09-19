@@ -1,0 +1,507 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guitarra Solista - Gustavo López | Música Elegante para Eventos</title>
+    <style>
+        /* ======================================================================
+          1. CONFIGURACIÓN DE VARIABLES CSS (:root)
+          Modifica fácilmente los colores, fuentes y espaciados principales aquí.
+          ======================================================================
+        */
+        :root {
+            --bg-color: #0d0d0d;
+            --card-bg: #181818;
+            --accent-color: #d92626; /* Rojo Flamenco */
+            --accent-hover: #ff3333;
+            --whatsapp-color: #25d366; /* Verde Oficial WhatsApp */
+            --whatsapp-hover: #20ba5a;
+            --text-color: #ffffff;
+            --text-muted: #b3b3b3;
+            --border-color: #2a2a2a;
+            --font-main: 'Segoe UI', Aptos, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            --max-width: 1100px;
+            --radius: 8px;
+        }
+
+        /* Reset & Estilos Base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Contenedor Principal (Zero-Scroll / Layout Compacto) */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* ======================================================================
+          2. HEADER / HERO SECTION
+          ======================================================================
+        */
+        .hero {
+            text-align: center;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-color);
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+
+        .hero p.tagline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
+
+        /* ======================================================================
+          3. DESCRIPCIÓN DEL SERVICIO & BIO DE GUSTAVO LÓPEZ
+          ======================================================================
+        */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .info-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .info-card h2 {
+            font-size: 1.1rem;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 0.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ======================================================================
+          4. GALERÍA DE FOTOS (4 PLACEHOLDERS EN CUADRADO 1:1)
+          ======================================================================
+        */
+        .photos-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1rem;
+        }
+
+        .photos-section h2 {
+            font-size: 1.1rem;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.8rem;
+        }
+
+        .photo-container {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Cajas cuadradas perfectas */
+            background-color: #252525;
+            border: 1px dashed var(--accent-color);
+            border-radius: calc(var(--radius) - 2px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            overflow: hidden;
+        }
+
+        /* Cuando subas imágenes reales, usa esta clase en la etiqueta <img> */
+        .photo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        /* ======================================================================
+          5. CONTENEDOR DE MEDIA (MULTIMEDIA Y AUDIO EN PARALELO)
+          ======================================================================
+        */
+        .media-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .media-block {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .media-block h2 {
+            font-size: 1.1rem;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 0.5rem;
+            color: var(--text-color);
+        }
+
+        /* Wrapper con Aspect Ratio Responsivo para Videos (16:9) */
+        .responsive-iframe-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: calc(var(--radius) - 2px);
+            background-color: #000;
+        }
+
+        .responsive-iframe-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Contenedor compacto para SoundCloud */
+        .audio-embed-container {
+            width: 100%;
+            border-radius: calc(var(--radius) - 2px);
+            overflow: hidden;
+        }
+
+        /* ======================================================================
+          6. REPERTORIO
+          ======================================================================
+        */
+        .repertoire-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 1rem;
+        }
+
+        .repertoire-section h2 {
+            font-size: 1.1rem;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .repertoire-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .repertoire-category h4 {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.2rem;
+        }
+
+        .repertoire-category ul {
+            list-style: none;
+        }
+
+        .repertoire-category li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.3rem;
+        }
+
+        /* ======================================================================
+          7. CALL TO ACTION & BANDERAS DE CONTACTO
+          ======================================================================
+        */
+        .cta-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.6rem;
+            font-weight: bold;
+            font-size: 0.95rem;
+            border-radius: var(--radius);
+            transition: background 0.2s ease;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-color);
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--whatsapp-hover);
+        }
+
+        .btn-email {
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--text-color);
+        }
+
+        .btn-email:hover {
+            background-color: rgba(217, 38, 38, 0.1);
+        }
+
+        /* ======================================================================
+          8. FOOTER
+          ======================================================================
+        */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-top: auto;
+        }
+
+        /* ======================================================================
+          9. ADAPTABILIDAD MÓVIL
+          ======================================================================
+        */
+        @media (max-width: 768px) {
+            .info-grid,
+            .media-section {
+                grid-template-columns: 1fr;
+            }
+
+            .photos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HEADER / HERO -->
+        <header class="hero">
+            <h1>Guitarra Solista | <span>Fusión, Latinoamericano & Flamenco</span></h1>
+            <p class="tagline">Música elegante y sofisticada para eventos y ambientación</p>
+        </header>
+
+        <!-- SECCIÓN DE INFORMACIÓN Y BIO -->
+        <section class="info-grid">
+            <!-- Tarjeta Propuesta Musical -->
+            <div class="info-card">
+                <h2>Ambientación & Acompañamiento</h2>
+                <p>
+                    Música instrumental en guitarra ideal para ambientar y acompañar un aperitivo y degustaciones de vinos. 
+                    Repertorio solista interpretado en guitarra electroacústica de cuerdas de nylon, con acompañamiento rítmico y armónico en vivo (Sin uso de backing tracks pregrabados).
+                </p>
+            </div>
+
+            <!-- Tarjeta Biografía -->
+            <div class="info-card">
+                <h2>Sobre Gustavo López</h2>
+                <p>
+                    Guitarrista y compositor. Ha participado en diversos proyectos musicales, destacando como director musical en la agrupación Mosaico (fusión flamenco latina), con quienes lanzó los discos “Primer Color” (2005) y “Todo es para siempre” (2021). Con estudios en Projazz y percusión de mano, se ha presentado en escenarios de Chile y España. Desde 2023 trabaja composiciones y arreglos solistas y en ensamble para eventos y conciertos.
+                </p>
+            </div>
+        </section>
+
+        <!-- GALERÍA DE FOTOS (PLACEHOLDERS CUADRADOS 1:1) -->
+        <section class="photos-section">
+            <h2>Galería de Fotografías</h2>
+            <div class="photos-grid">
+                <!-- Para agregar imágenes reales, reemplaza el contenido del div por:
+                     <img src="tu-foto-1.jpg" alt="Gustavo López" class="photo-img"> 
+                -->
+                <div class="photo-container">[ Foto 1 ]</div>
+                <div class="photo-container">[ Foto 2 ]</div>
+                <div class="photo-container">[ Foto 3 ]</div>
+                <div class="photo-container">[ Foto 4 ]</div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE MULTIMEDIA (YOUTUBE Y SOUNDCLOUD) -->
+        <section class="media-section">
+            
+            <!-- BLOQUE DE VIDEO (YOUTUBE) -->
+            <div class="media-block">
+                <h2>Videos en Vivo (YouTube)</h2>
+                
+                <!-- Video 1 -->
+                <div class="responsive-iframe-wrapper">
+                    <!-- PASTE YOUTUBE EMBED CODE HERE -->
+                    <iframe src="https://www.youtube.com/embed/AbS5grE7cyA" title="Muestra de Guitarra Solista 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="responsive-iframe-wrapper">
+                    <iframe src="https://www.youtube.com/embed/MIUi-0oM0PQ" title="Muestra de Guitarra Solista 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="responsive-iframe-wrapper">
+                    <iframe src="https://www.youtube.com/embed/3QK9tYayrs0" title="Muestra de Guitarra Solista 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- BLOQUE DE AUDIO (SOUNDCLOUD) -->
+            <div class="media-block">
+                <h2>Muestras de Audio (SoundCloud)</h2>
+
+                <!-- SoundCloud Track 1: La Cumparsita -->
+                <div class="audio-embed-container">
+                    <!-- PASTE SOUNDCLOUD EMBED CODE HERE -->
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/gustavo_lopez_guitarrista/la-cumparsita&color=%23d92626&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+                </div>
+
+                <!-- SoundCloud Track 2: Berimbau -->
+                <div class="audio-embed-container">
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/gustavo_lopez_guitarrista/berimbau&color=%23d92626&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SECCIÓN DE REPERTORIO -->
+        <section class="repertoire-section">
+            <h2>Repertorio Sugerido</h2>
+            <div class="repertoire-grid">
+                
+                <div class="repertoire-category">
+                    <h4>Flamenco & Rumbas</h4>
+                    <ul>
+                        <li>Entre dos aguas (Paco de Lucía)</li>
+                        <li>Mediterranean Sundance (Al Di Meola)</li>
+                        <li>Moorea (Gipsy Kings)</li>
+                        <li>Pharaon (Gipsy Kings)</li>
+                        <li>Bulerías flamencas</li>
+                    </ul>
+                </div>
+
+                <div class="repertoire-category">
+                    <h4>Folclore & Fusión Latinoamericana</h4>
+                    <ul>
+                        <li>Alfonsina y el mar (Zamba argentina)</li>
+                        <li>Volver a los 17 (Violeta Parra)</li>
+                        <li>Valparaíso (Osvaldo "Gitano" Rodríguez)</li>
+                        <li>El cautivo de Til Til (Patricio Manns)</li>
+                        <li>Valses peruanos</li>
+                    </ul>
+                </div>
+
+                <div class="repertoire-category">
+                    <h4>Bossa Nova & Jazz Standard</h4>
+                    <ul>
+                        <li>A Felicidade (Tom Jobim)</li>
+                        <li>Berimbau (Baden Powell)</li>
+                        <li>Autumn Leaves (Standard de jazz)</li>
+                        <li>Wave (Tom Jobim)</li>
+                    </ul>
+                </div>
+
+                <div class="repertoire-category">
+                    <h4>Clásica, Pop & Rock Adaptado</h4>
+                    <ul>
+                        <li>Romanza (Anónimo / Clásica)</li>
+                        <li>Yesterday (The Beatles)</li>
+                        <li>Goodbye Blue Sky (Pink Floyd)</li>
+                        <li>Mood for a Day (Yes)</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION & CONTACTO -->
+        <div class="cta-container">
+            <a href="https://wa.me/56992382055" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                💬 Contactar por WhatsApp (+56 9 9238 2055)
+            </a>
+            <a href="mailto:guslopezr@gmail.com" class="btn btn-email">
+                ✉ Enviar Correo (guslopezr@gmail.com)
+            </a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Gustavo López — Guitarra Solista para Eventos y Ambientación</p>
+    </footer>
+
+</body>
+</html>
+
+```
