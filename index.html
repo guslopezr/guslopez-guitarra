@@ -7,13 +7,13 @@
     <style>
         /* ======================================================================
           1. CONFIGURACIÓN DE VARIABLES CSS (:root)
-          Modifica fácilmente los colores, fuentes y espaciados principales aquí.
+          Personaliza colores, fuentes y medidas globales del sitio web aquí.
           ======================================================================
         */
         :root {
             --bg-color: #0d0d0d;
             --card-bg: #181818;
-            --accent-color: #d92626; /* Rojo Flamenco */
+            --accent-color: #d92626; /* Rojo Flamenco Accent */
             --accent-hover: #ff3333;
             --whatsapp-color: #25d366; /* Verde Oficial WhatsApp */
             --whatsapp-hover: #20ba5a;
@@ -47,7 +47,7 @@
             text-decoration: none;
         }
 
-        /* Contenedor Principal */
+        /* Contenedor Principal (Zero-Scroll / Above-the-fold Focus) */
         .container {
             width: 100%;
             max-width: var(--max-width);
@@ -122,7 +122,7 @@
         }
 
         /* ======================================================================
-          4. GALERÍA DE FOTOS (CUADRADOS 1:1 CON LAS FOTOS DEL REPO)
+          4. GALERÍA DE FOTOS (FOTOS GL1-GL4 EN CAJAS CUADRADAS 1:1)
           ======================================================================
         */
         .photos-section {
@@ -147,7 +147,7 @@
 
         .photo-container {
             width: 100%;
-            aspect-ratio: 1 / 1; /* Cajas cuadradas perfectas */
+            aspect-ratio: 1 / 1; /* Cajas cuadradas 1:1 */
             background-color: #1a1a1a;
             border: 1px solid var(--border-color);
             border-radius: calc(var(--radius) - 2px);
@@ -163,7 +163,7 @@
         }
 
         /* ======================================================================
-          5. CONTENEDOR DE MEDIA (MULTIMEDIA Y AUDIO)
+          5. CONTENEDOR DE MEDIA (MULTIMEDIA Y AUDIOS)
           ======================================================================
         */
         .media-section {
@@ -347,7 +347,7 @@
         
         <!-- HEADER / HERO -->
         <header class="hero">
-            <h1>Guitarra Solista - <span>Fusión, Latinoamericano & Flamenco</span></h1>
+            <h1>Guitarra Solista | <span>Fusión, Latinoamericano & Flamenco</span></h1>
             <p class="tagline">Música elegante y sofisticada para eventos y ambientación</p>
         </header>
 
@@ -358,7 +358,7 @@
                 <h2>Ambientación & Acompañamiento</h2>
                 <p>
                     Música instrumental en guitarra ideal para ambientar y acompañar un aperitivo y degustaciones de vinos. 
-                    Repertorio solista interpretado en guitarra electroacústica de cuerdas de nylon, con acompañamiento rítmico y armónico en vivo.
+                    Repertorio solista interpretado en guitarra electroacústica de cuerdas de nylon, con acompañamiento rítmico y armónico en vivo (Sin uso de backing tracks pregrabados).
                 </p>
             </div>
 
@@ -371,7 +371,7 @@
             </div>
         </section>
 
-        <!-- GALERÍA DE FOTOS SUBIDAS AL REPOSITORIO -->
+        <!-- GALERÍA DE FOTOS (GL1 - GL4) -->
         <section class="photos-section">
             <h2>Galería de Fotografías</h2>
             <div class="photos-grid">
@@ -390,24 +390,25 @@
             </div>
         </section>
 
-        <!-- SECCIÓN DE MULTIMEDIA (YOUTUBE Y SOUNDCLOUD) -->
+        <!-- SECCIÓN DE MULTIMEDIA (VIDEOS EN VIVO Y AUDIOS) -->
         <section class="media-section">
             
-            <!-- BLOQUE DE VIDEO (YOUTUBE) -->
+            <!-- BLOQUE DE VIDEOS EN VIVO (YOUTUBE) -->
             <div class="media-block">
-                <h2>Videos en Vivo (YouTube)</h2>
+                <h2>Videos en Vivo</h2>
                 
-                <!-- 1) Reel Gustavo López eventos -->
+                <!-- Video 1: Reel Gustavo López eventos -->
                 <div class="responsive-iframe-wrapper">
-                    <iframe src="https://www.youtube.com/embed/BrRcRB4z3Oc" title="Reel Gustavo López eventos" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <!-- PASTE YOUTUBE EMBED CODE FOR REEL HERE -->
+                    <iframe src="https://www.youtube.com/embed/AbS5grE7cyA" title="Reel Gustavo López eventos" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
-                <!-- 2) Pharaon (cover) -->
+                <!-- Video 2: Pharaon -->
                 <div class="responsive-iframe-wrapper">
-                    <iframe src="https://www.youtube.com/embed/AbS5grE7cyA" title="Pharaon (cover)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/MIUi-0oM0PQ" title="Pharaon (Versión cover)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
-                <!-- 3) El viejo puerto -->
+                <!-- Video 3: El viejo puerto -->
                 <div class="responsive-iframe-wrapper">
                     <iframe src="https://www.youtube.com/embed/3QK9tYayrs0" title="El viejo puerto" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
@@ -417,10 +418,13 @@
             <div class="media-block">
                 <h2>Muestras de Audio (SoundCloud)</h2>
 
+                <!-- SoundCloud Track 1: La Cumparsita -->
                 <div class="audio-embed-container">
+                    <!-- PASTE SOUNDCLOUD EMBED CODE HERE -->
                     <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/gustavo_lopez_guitarrista/la-cumparsita&color=%23d92626&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
                 </div>
 
+                <!-- SoundCloud Track 2: Berimbau -->
                 <div class="audio-embed-container">
                     <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/gustavo_lopez_guitarrista/berimbau&color=%23d92626&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
                 </div>
