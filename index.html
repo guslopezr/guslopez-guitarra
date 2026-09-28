@@ -7,7 +7,7 @@
     <style>
         /* ======================================================================
           1. CONFIGURACIÓN DE VARIABLES CSS (:root)
-          Personaliza colores, fuentes y medidas globales del sitio web aquí.
+          Modifica los colores, fuentes y espaciados generales del sitio aquí.
           ======================================================================
         */
         :root {
@@ -47,7 +47,7 @@
             text-decoration: none;
         }
 
-        /* Contenedor Principal (Zero-Scroll / Above-the-fold Focus) */
+        /* Contenedor Principal */
         .container {
             width: 100%;
             max-width: var(--max-width);
@@ -122,7 +122,7 @@
         }
 
         /* ======================================================================
-          4. GALERÍA DE FOTOS (FOTOS GL1-GL4 EN CAJAS CUADRADAS 1:1)
+          4. GALERÍA DE FOTOS (GL1 - GL4)
           ======================================================================
         */
         .photos-section {
@@ -147,7 +147,7 @@
 
         .photo-container {
             width: 100%;
-            aspect-ratio: 1 / 1; /* Cajas cuadradas 1:1 */
+            aspect-ratio: 1 / 1;
             background-color: #1a1a1a;
             border: 1px solid var(--border-color);
             border-radius: calc(var(--radius) - 2px);
@@ -163,7 +163,7 @@
         }
 
         /* ======================================================================
-          5. CONTENEDOR DE MEDIA (MULTIMEDIA Y AUDIOS)
+          5. CONTENEDOR DE MEDIA (VIDEOS Y AUDIOS)
           ======================================================================
         */
         .media-section {
@@ -189,7 +189,7 @@
             color: var(--text-color);
         }
 
-        /* Wrapper con Aspect Ratio Responsivo para Videos (16:9) */
+        /* Wrapper Responsivo para Videos (Aspect Ratio 16:9) */
         .responsive-iframe-wrapper {
             position: relative;
             width: 100%;
@@ -371,7 +371,7 @@
             </div>
         </section>
 
-        <!-- GALERÍA DE FOTOS (GL1 - GL4) -->
+        <!-- GALERÍA DE FOTOS -->
         <section class="photos-section">
             <h2>Galería de Fotografías</h2>
             <div class="photos-grid">
@@ -399,8 +399,7 @@
                 
                 <!-- Video 1: Reel Gustavo López eventos -->
                 <div class="responsive-iframe-wrapper">
-                    <!-- PASTE YOUTUBE EMBED CODE FOR REEL HERE -->
-                    <iframe src="https://www.youtube.com/embed/AbS5grE7cyA" title="Reel Gustavo López eventos" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/BrRcRB4z3Oc" title="Reel Gustavo López eventos" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
 
                 <!-- Video 2: Pharaon -->
@@ -420,7 +419,6 @@
 
                 <!-- SoundCloud Track 1: La Cumparsita -->
                 <div class="audio-embed-container">
-                    <!-- PASTE SOUNDCLOUD EMBED CODE HERE -->
                     <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/gustavo_lopez_guitarrista/la-cumparsita&color=%23d92626&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
                 </div>
 
